@@ -40,7 +40,7 @@ from django.contrib import messages
 def admin_login(request):
     try:
         if request.user.is_authenticated:
-            return redirect('/customadmin/dashboard/')
+            return redirect('/customadmin/dashboard/') #dashboard name is urls.
 
         if request.method == 'POST':
             username = request.POST.get('username')
@@ -66,4 +66,4 @@ def admin_login(request):
         print(e)
 
 def admindashboard(request):
-    return render(request, 'customadmin/dashboard.html')
+    return render(request, 'customadmin/index.html')
